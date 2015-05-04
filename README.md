@@ -1,6 +1,1 @@
-# Weather App
-
-~~~
-# Moogenerator
-mogenerator --v2 --swift --model Resources/Storage.xcdatamodeld --output-dir Classes/Model/
-~~~
+# Weather App [![Circle CI](https://circleci.com/gh/VojtechBartos/Weather-App/tree/master.svg?style=svg)](https://circleci.com/gh/VojtechBartos/Weather-App/tree/master)
