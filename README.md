@@ -8,6 +8,7 @@ Dependencies:
  - [CocoaPods](https://cocoapods.org/)
  - Xcode 6.3 at least
  - [Google Place API key](https://developers.google.com/places/)
+   - for city autocomplete and getting place geo informations
  
 Steps:
 
