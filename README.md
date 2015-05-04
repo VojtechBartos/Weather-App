@@ -1,5 +1,7 @@
 # Weather App
 
+Project on which i have tested Swift language.
+
 ## Installation
 
 Dependencies:
