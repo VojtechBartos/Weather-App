@@ -7,5 +7,3 @@ machine:
 test:
   pre:
     - python Scripts/generate_credentials.py --directory ./WeatherApp
-  override:
-    - xcodebuild clean test -workspace WeatherApp.xcworkspace -scheme WeatherApp -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.2' | tee $CIRCLE_ARTIFACTS/xcode_raw.log | xcpretty --color --report junit --output $CIRCLE_TEST_REPORTS/xcode/xcode.xml && exit ${PIPESTATUS[0]}
