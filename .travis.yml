@@ -1,0 +1,6 @@
+language: swift
+before_script:
+  - python Scripts/generate_credentials.py --directory ./WeatherApp
+script:
+  - xctool -workspace WeatherApp.xcworkspace -scheme WeatherApp -sdk iphonesimulator
+  - xctool test -workspace WeatherApp.xcworkspace -scheme WeatherAppTests -sdk iphonesimulator
