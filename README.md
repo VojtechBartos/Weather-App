@@ -9,9 +9,19 @@ Dependencies:
  
 Steps:
 
-1. `git clone git@github.com:VojtechBartos/Weather-App.git`
-2. `cd Weather-App`
-3. `pod install`
-4. `python Scripts/generate_credentials.py --directory ./WeatherApp` will generate `WeatherApp\Credentials.plist` file
-5. open Xcode and open `Credentials.plist` and replace `API_KEY` with your Google Place API key
-6. Build project
+```bash
+# clone repository
+git clone git@github.com:VojtechBartos/Weather-App.git
+cd Weather-App/
+
+# cocoapods install
+pod install
+
+# generate file for keeping credentials
+python Scripts/generate_credentials.py --directory ./WeatherApp
+
+# open project workspace
+open WeatherApp.xcworkspace
+```
+
+Open `Credentials.plist` and replace `API_KEY` with your Google Place API key and build project
