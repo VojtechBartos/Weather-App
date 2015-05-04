@@ -1,10 +1,8 @@
 machine:
+  xcode:
+    version: "6.3.1"
   environment:
     LANG: en_US.UTF-8
-
-dependencies:
-  pre:
-    - sudo xcode-select --switch /Applications/Xcode-6.3.app
 
 test:
   pre:
