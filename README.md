@@ -25,3 +25,9 @@ open WeatherApp.xcworkspace
 ```
 
 Open `Credentials.plist` and replace `API_KEY` with your Google Place API key and build project
+
+## Todo's
+
+1. CI
+  - Travis - does not support Xcode 6.3
+  - Cirle - iOS in beta, invitation only
