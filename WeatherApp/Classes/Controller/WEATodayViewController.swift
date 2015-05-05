@@ -87,11 +87,22 @@ class WEATodayViewController: UIViewController {
         self.cityLabel.text = String(format: "%@, %@", self.city!.name!, self.city!.country!)
         
         if let forecast: WEAForecast = self.city?.orderedForecast().first {
-            self.imageView.image = forecast.imageIcon
-            self.infoLabel.text = String(format: "%i C | %@", forecast.temperatureIn(self.config.temperatureUnit).integerValue, forecast.info!)
+            var temperatureUnit = (self.config.temperatureUnit == WEAForecastTemperatureUnit.Fahrenheit) ? "°F" : "°C"
+            var lengthUnit = (self.config.lengthUnit == WEAForecastLengthUnit.Yards) ? "y/s" : "m/s"
             
+            self.imageView.image = forecast.imageIcon
+            self.infoLabel.text = String(
+                format: "%i %@ | %@",
+                forecast.temperatureIn(self.config.temperatureUnit).integerValue,
+                temperatureUnit,
+                forecast.info!
+            )
             self.pressureLabel.text = String(format: "%i hPa", forecast.pressure!.integerValue)
-            self.windLabel.text = String(format: "%i mp/s", forecast.windSpeedIn(self.config.lengthUnit).integerValue)
+            self.windLabel.text = String(
+                format: "%i %@",
+                forecast.windSpeedIn(self.config.lengthUnit).integerValue,
+                lengthUnit
+            )
             self.crLabel.text = String(format: "%i%%", forecast.humidity!.integerValue)
             self.rainLabel.text = String(format: "%.01f mm", forecast.rain!.doubleValue)
             self.compassLabel.text = forecast.compass
