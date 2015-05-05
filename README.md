@@ -9,7 +9,7 @@ Dependencies:
  - Xcode 6.3 at least
  - [Google Place API key](https://developers.google.com/places/)
    - for city autocomplete and getting place geo informations
- 
+
 Steps:
 
 ```bash
@@ -31,6 +31,7 @@ Open `Credentials.plist` and replace `API_KEY` with your Google Place API key an
 
 ## Todo's
 
-1. CI
+1. Tests
+2. CI
   - Travis - does not support Xcode 6.3
-  - Cirle - iOS in beta, invitation only
+  - Circle - iOS in beta, invitation only
