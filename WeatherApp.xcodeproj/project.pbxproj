@@ -202,8 +202,7 @@
 				BC8E27541AE23D91004BE582 /* UIImage+WEACustom.swift */,
 				BC05B59F1AE3DE6E0021C864 /* NSDate+WEAcustom.swift */,
 			);
-			name = Extensions;
-			path = Extension;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		BCA443871AF66B6800784E60 /* NIBs */ = {
