@@ -10,8 +10,7 @@ import UIKit
 import Alamofire
 import CoreLocation
 
-let API_BASE_URL = "http://api.openweathermap.org/data/2.5"
-let KEY_CITIES = "cities"
+let WEA_WEATHER_API_BASE_URL = "http://api.openweathermap.org/data/2.5"
 
 class WEAWeatherAPI: NSObject {
    
@@ -19,7 +18,7 @@ class WEAWeatherAPI: NSObject {
         let parameters = ["lat": coordinate.latitude, "lon": coordinate.longitude, "cnt": days, "mode": "json"]
         
         Alamofire
-            .request(.GET, "".join([API_BASE_URL, "/forecast/daily"]), parameters: parameters as? [String : AnyObject])
+            .request(.GET, "".join([WEA_WEATHER_API_BASE_URL, "/forecast/daily"]), parameters: parameters as? [String : AnyObject])
             .responseJSON { (request, response, JSON, error) in
                 handler(JSON, error)
         }
@@ -30,7 +29,7 @@ class WEAWeatherAPI: NSObject {
         let parameters = ["id": ",".join(stringCities)]
         
         Alamofire
-            .request(.GET, "".join([API_BASE_URL, "/group"]), parameters: parameters)
+            .request(.GET, "".join([WEA_WEATHER_API_BASE_URL, "/group"]), parameters: parameters)
             .responseJSON { (request, response, JSON, error) in
                 handler(JSON, error)
         }

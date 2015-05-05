@@ -75,7 +75,9 @@ class WEATodayViewController: UIViewController {
     }
     
     func setupObservers() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: "cz.vojtechbartos.WeatherApp.locationDidChange", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "update", name: "cz.vojtechbartos.WeatherApp.locationDidChange", object: nil
+        )
     }
     
     func update() {

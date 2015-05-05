@@ -39,7 +39,9 @@ class WEAForecastTableViewController: UITableViewController {
     }
     
     func setupObservers() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reload", name: "cz.vojtechbartos.WeatherApp.locationDidChange", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "reload", name: "cz.vojtechbartos.WeatherApp.locationDidChange", object: nil
+        )
     }
 
     // MARK: - Helpers

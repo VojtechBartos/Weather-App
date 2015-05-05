@@ -9,6 +9,8 @@
 import UIKit
 import Alamofire
 
+let WEA_GOOGLE_API_BASE_URL = "https://maps.googleapis.com/maps/api/place"
+
 class WEAGoogleAPI: NSObject {
    
     class func findCity(name: String, handler: (NSArray?, NSError?) -> Void) {
@@ -19,7 +21,7 @@ class WEAGoogleAPI: NSObject {
         ]
         
         Alamofire
-            .request(.GET, "https://maps.googleapis.com/maps/api/place/autocomplete/json", parameters: parameters)
+            .request(.GET, "".join([WEA_GOOGLE_API_BASE_URL, "/autocomplete/json"]), parameters: parameters)
             .responseJSON { (request, response, JSON, error) in
                 handler(JSON?.valueForKeyPath("predictions") as? NSArray, error)
         }
@@ -32,7 +34,7 @@ class WEAGoogleAPI: NSObject {
         ]
         
         Alamofire
-            .request(.GET, "https://maps.googleapis.com/maps/api/place/details/json", parameters: parameters)
+            .request(.GET,"".join([WEA_GOOGLE_API_BASE_URL, "/details/json"]), parameters: parameters)
             .responseJSON { (request, response, JSON, error) in
                 handler(JSON?.valueForKeyPath("result.geometry.location") as? NSDictionary, error)
         }

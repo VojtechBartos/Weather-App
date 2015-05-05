@@ -8,6 +8,9 @@
 
 import UIKit
 
+let WEA_SETTINGS_ITEM_CELL_IDENTIFIER = "WEASettingsItemCell"
+let WEA_SETTINGS_PICKER_CELL_IDENTIFIER = "WEASettingsPickerCell"
+
 class WEASettingsTableViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
 
     let config: WEAConfig = WEAConfig.sharedInstance
@@ -54,13 +57,12 @@ class WEASettingsTableViewController: UITableViewController, UITableViewDelegate
     // MARK: - UITableViewDelegate
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let reuseIdentifier: String = "WEASettingsItemCell"
-        
-
         if self.pickerAtPosition != nil && self.pickerAtPosition?.row == indexPath.row {
             let index: Int = indexPath.row - 1
             let setting: NSDictionary = self.settings[index] as! NSDictionary
-            let cell = tableView.dequeueReusableCellWithIdentifier("WEASettingsPickerCell", forIndexPath: indexPath) as! WEAPickerTableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(
+                WEA_SETTINGS_PICKER_CELL_IDENTIFIER, forIndexPath: indexPath
+            ) as! WEAPickerTableViewCell
     
             cell.choices = setting.valueForKey("choices") as! [String]
             cell.picker.reloadAllComponents()
@@ -90,7 +92,9 @@ class WEASettingsTableViewController: UITableViewController, UITableViewDelegate
         
         let setting: NSDictionary = self.settings[indexPath.row] as! NSDictionary
         let choices: [String] = setting.valueForKey("choices") as! [String]
-        let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(
+            WEA_SETTINGS_ITEM_CELL_IDENTIFIER, forIndexPath: indexPath
+        ) as! UITableViewCell
         
         cell.textLabel?.text = setting.valueForKey("label") as? String
         cell.textLabel?.font = UIFont.wea_proximaNovaRegularWithSize(17.0)

@@ -9,6 +9,8 @@
 import UIKit
 import CoreLocation
 
+let WEA_SEARCH_CELL_IDENTIFIER = "WEASearchCell"
+
 class WEASearchTableViewController: UITableViewController, UISearchControllerDelegate, UISearchBarDelegate {
 
     var delegate: WEADismissControllerProtocol?
@@ -81,7 +83,7 @@ class WEASearchTableViewController: UITableViewController, UISearchControllerDel
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: WEASearchTableViewCell = tableView.dequeueReusableCellWithIdentifier(
-            "WEASearchCell", forIndexPath: indexPath
+            WEA_SEARCH_CELL_IDENTIFIER, forIndexPath: indexPath
         ) as! WEASearchTableViewCell
         
         let city: NSDictionary = self.cities[indexPath.row] as! NSDictionary
