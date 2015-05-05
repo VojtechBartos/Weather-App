@@ -34,6 +34,7 @@
 		BC2135641AF7511F006F7501 /* Credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC2135631AF7511F006F7501 /* Credentials.plist */; };
 		BC2135661AF754DA006F7501 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC2135651AF754DA006F7501 /* LaunchScreen.xib */; };
 		BC2135681AF754E7006F7501 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC2135671AF754E7006F7501 /* Main.storyboard */; };
+		BC6EBD1C1AF89471004958DE /* WEADismissControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6EBD1B1AF89471004958DE /* WEADismissControllerProtocol.swift */; };
 		BC8E274B1AE23133004BE582 /* UIFont+WEACustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8E274A1AE23133004BE582 /* UIFont+WEACustom.swift */; };
 		BC8E274D1AE232EC004BE582 /* UIColor+WEACustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8E274C1AE232EC004BE582 /* UIColor+WEACustom.swift */; };
 		BC8E274E1AE238CC004BE582 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BC8E27451AE22FCD004BE582 /* ProximaNova-Bold.otf */; };
@@ -84,6 +85,7 @@
 		BC2135631AF7511F006F7501 /* Credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Credentials.plist; sourceTree = "<group>"; };
 		BC2135651AF754DA006F7501 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		BC2135671AF754E7006F7501 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BC6EBD1B1AF89471004958DE /* WEADismissControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WEADismissControllerProtocol.swift; sourceTree = "<group>"; };
 		BC8E27451AE22FCD004BE582 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
 		BC8E27461AE22FCD004BE582 /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.otf"; sourceTree = "<group>"; };
 		BC8E27471AE22FCD004BE582 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
@@ -161,6 +163,14 @@
 			name = Entities;
 			sourceTree = "<group>";
 		};
+		BC6EBD1A1AF893F1004958DE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BC6EBD1B1AF89471004958DE /* WEADismissControllerProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		BC8E27431AE22F6B004BE582 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +246,7 @@
 		BCDBD9F21ADC0870006DF8C3 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				BC6EBD1A1AF893F1004958DE /* Protocols */,
 				BC8E27491AE23101004BE582 /* Extensions */,
 				BC8E27431AE22F6B004BE582 /* Resources */,
 				BCDBDA171ADC0972006DF8C3 /* Classes */,
@@ -493,6 +504,7 @@
 				BC8E274D1AE232EC004BE582 /* UIColor+WEACustom.swift in Sources */,
 				BCDBDA1C1ADC0B5E006DF8C3 /* WEAForecastTableViewController.swift in Sources */,
 				BC05B5A01AE3DE6E0021C864 /* NSDate+WEAcustom.swift in Sources */,
+				BC6EBD1C1AF89471004958DE /* WEADismissControllerProtocol.swift in Sources */,
 				BCDBD9F61ADC0870006DF8C3 /* AppDelegate.swift in Sources */,
 				BCEFBC091AE629BF00A6A9DA /* WEASearchTableViewCell.swift in Sources */,
 				BC05B5971AE3C4160021C864 /* WEACity.swift in Sources */,

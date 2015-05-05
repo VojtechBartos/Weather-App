@@ -10,7 +10,7 @@ import UIKit
 
 let WEA_LOCATION_CELL_IDENTIFIER = "WEALocationCell"
 
-class WEALocationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class WEALocationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, WEADismissControllerProtocol {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var doneButton: UIBarButtonItem!
@@ -30,6 +30,7 @@ class WEALocationViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.reload()
+        
     }
     
     // MARK: - Setup
@@ -44,7 +45,7 @@ class WEALocationViewController: UIViewController, UITableViewDelegate, UITableV
         
         // refresh control
         self.refreshControl = UIRefreshControl()
-        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(self.refreshControl)
         
         // done button
@@ -60,7 +61,9 @@ class WEALocationViewController: UIViewController, UITableViewDelegate, UITableV
         self.tableView.reloadData()
     }
     
-    func refresh(sender: AnyObject) {
+    func refresh() {
+        self.refreshControl.beginRefreshing()
+        
         let ids: [NSNumber] = WEACity.getAll().map {
             return $0.weatherCityId!
         }
@@ -76,6 +79,18 @@ class WEALocationViewController: UIViewController, UITableViewDelegate, UITableV
             self.cities = WEACity.updateCitiesTodayForecast(response as? NSDictionary)
             self.tableView.reloadData()
         })
+    }
+    
+    // MARK: -  Segues
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            if identifier == "openSearch" {
+                let navController = segue.destinationViewController as! WEANavigationController
+                let vc = navController.viewControllers.first as! WEASearchTableViewController
+                vc.delegate = self;
+            }
+        }
     }
     
     // MARK: - UITableViewDataSource
@@ -152,6 +167,14 @@ class WEALocationViewController: UIViewController, UITableViewDelegate, UITableV
         }
         
         return height
+    }
+    
+    // MARK: - WEADismissControllerProtocol
+    
+    func controller(controller: UIViewController, didDismissWithAnimation animation: Bool) {
+        controller.dismissViewControllerAnimated(animation, completion: { () -> Void in
+            self.reload()
+        })
     }
     
     // MARK: - Event handlers

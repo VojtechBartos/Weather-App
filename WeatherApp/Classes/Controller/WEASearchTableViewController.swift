@@ -11,8 +11,9 @@ import CoreLocation
 
 class WEASearchTableViewController: UITableViewController, UISearchControllerDelegate, UISearchBarDelegate {
 
+    var delegate: WEADismissControllerProtocol?
     var cities: NSArray = []
-    var searchBar: UISearchBar?    
+    var searchBar: UISearchBar?
     
     // MARK: - Screen life cycle
     
@@ -128,11 +129,19 @@ class WEASearchTableViewController: UITableViewController, UISearchControllerDel
                     city.googlePlaceId = googlePlaceId
                     city.managedObjectContext?.save(nil)
                     
-                    self.dismissViewControllerAnimated(true, completion: nil)
+                    self.dismiss()
                 }
             })
 
         })
+    }
+    
+    // MARK: - Helpers
+    
+    func dismiss() {
+        if self.delegate != nil {
+            self.delegate?.controller(self, didDismissWithAnimation: false)
+        }
     }
 
 }

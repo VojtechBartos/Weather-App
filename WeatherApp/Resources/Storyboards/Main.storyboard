@@ -350,7 +350,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="l7u-n2-hD0" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="5VP-5A-cHK"/>
+                                    <segue destination="l7u-n2-hD0" kind="presentation" identifier="openSearch" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="5VP-5A-cHK"/>
                                 </connections>
                             </button>
                         </subviews>
