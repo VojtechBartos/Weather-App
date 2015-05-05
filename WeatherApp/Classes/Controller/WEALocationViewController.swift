@@ -13,6 +13,7 @@ let WEA_LOCATION_CELL_IDENTIFIER = "WEALocationCell"
 class WEALocationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
 
     let config: WEAConfig = WEAConfig.sharedInstance
     
@@ -45,6 +46,11 @@ class WEALocationViewController: UIViewController, UITableViewDelegate, UITableV
         self.refreshControl = UIRefreshControl()
         self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(self.refreshControl)
+        
+        // done button
+        self.doneButton.setTitleTextAttributes([
+            NSFontAttributeName: UIFont.wea_proximaNovaSemiboldWithSize(18.0)
+        ], forState: UIControlState.Normal)
     }
     
     // MARK: - Refresh & reload

@@ -372,6 +372,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneButton" destination="SlP-hd-bbG" id="oU4-GN-8Ks"/>
                         <outlet property="tableView" destination="cbM-IO-RWA" id="W3L-EQ-pil"/>
                     </connections>
                 </viewController>
