@@ -41,6 +41,10 @@ class WEASearchTableViewController: UITableViewController, UISearchControllerDel
         textField.layer.cornerRadius = 5.0
         textField.becomeFirstResponder()
         
+        var button = searchBar.valueForKey("cancelButton") as! UIButton
+        button.setTitle("Close", forState: UIControlState.Normal)
+        button.titleLabel?.font = UIFont.wea_proximaNovaSemiboldWithSize(17.0)
+        
         self.navigationItem.titleView = searchBar
         self.searchBar = searchBar
         
