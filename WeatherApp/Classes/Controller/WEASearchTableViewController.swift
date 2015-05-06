@@ -61,6 +61,11 @@ class WEASearchTableViewController: UITableViewController, UISearchControllerDel
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         WEAGoogleAPI.findCity(searchText, handler: { (places: NSArray?, error: NSError?) -> Void in
+            if error != nil {
+                self.showMessage(error!.localizedDescription)
+                return
+            }
+            
             self.cities = places!
             self.tableView.reloadData()
         })
@@ -106,8 +111,7 @@ class WEASearchTableViewController: UITableViewController, UISearchControllerDel
         
         WEAGoogleAPI.getCityDetail(googlePlaceId, handler: { (location: NSDictionary?, error: NSError?) -> Void in
             if error != nil || location == nil {
-                println(error)
-                // TODO(vojta) show error
+                self.showMessage(error!.localizedDescription)
                 return
             }
             
@@ -120,8 +124,7 @@ class WEASearchTableViewController: UITableViewController, UISearchControllerDel
             
             WEAWeatherAPI.fetchForecast(coordinate, days: 1, handler: { (response: AnyObject?, error: NSError?) -> Void in
                 if error != nil {
-                    println(error)
-                    // TODO(vojta) show error
+                    self.showMessage(error!.localizedDescription)
                     return
                 }
                 
@@ -129,7 +132,7 @@ class WEASearchTableViewController: UITableViewController, UISearchControllerDel
                     var city: WEACity = WEACity.getOrCreate(cityId)
                     city.setEntityData(response)
                     city.googlePlaceId = googlePlaceId
-                    city.managedObjectContext?.save(nil)
+                    city.managedObjectContext?.MR_saveToPersistentStoreAndWait()
                     
                     self.dismiss()
                 }

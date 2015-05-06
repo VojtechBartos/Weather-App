@@ -73,7 +73,7 @@ class WEATabBarController: UITabBarController, CLLocationManagerDelegate {
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             
             if error != nil {
-                println(error)
+                self.showMessage(error!.localizedDescription)
                 return
             }
             

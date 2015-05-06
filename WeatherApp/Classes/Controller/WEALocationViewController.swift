@@ -72,7 +72,7 @@ class WEALocationViewController: UIViewController, UITableViewDelegate, UITableV
             self.refreshControl.endRefreshing()
             
             if error != nil {
-                println(error)
+                self.showMessage(error!.localizedDescription)
                 return
             }
             
