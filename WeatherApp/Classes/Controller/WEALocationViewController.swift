@@ -19,7 +19,12 @@ class WEALocationViewController: UIViewController, UITableViewDelegate, UITableV
     
     var refreshControl: UIRefreshControl!
     var cities: [WEACity] = []
-    
+    var prototypeCell: WEAForecastTableViewCell {
+        get {
+            return self.tableView.dequeueReusableCellWithIdentifier(WEA_LOCATION_CELL_IDENTIFIER) as! WEAForecastTableViewCell
+        }
+    }
+
     // MARK: - Screen life cycle
     
     override func viewDidLoad() {
@@ -123,18 +128,22 @@ class WEALocationViewController: UIViewController, UITableViewDelegate, UITableV
         )
         let image: UIImage = UIImage.wea_imageForTableViewRowAction(
             attributedTitle,
-            size: CGSizeMake(100.0, 100.0),
+            size: CGSizeMake(100.0, self.tableView(tableView, heightForRowAtIndexPath: indexPath)),
             backgroundColor: UIColor.wea_colorWithHexString("#FF8847")
         )!
         
         let deleteTitle = "              "
         var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: deleteTitle , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+            tableView.beginUpdates()
+            
             // delete entity
             let city: WEACity = self.cities[indexPath.row] as WEACity
             city.MR_deleteEntity()
             city.managedObjectContext?.MR_saveToPersistentStoreAndWait()
+            self.cities.removeAtIndex(indexPath.row)
             
-            self.reload()
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+            tableView.endUpdates()
         })
         
         deleteAction.backgroundColor = UIColor(patternImage: image)
@@ -157,16 +166,11 @@ class WEALocationViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        var height: CGFloat = 100.0
-        
-        if var cell: WEAForecastTableViewCell = tableView.dequeueReusableCellWithIdentifier(WEA_LOCATION_CELL_IDENTIFIER) as? WEAForecastTableViewCell {
-            cell = self.configure(cell, indexPath: indexPath)
-            cell.setNeedsLayout()
-            cell.layoutIfNeeded()
-            height = cell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height
-        }
-        
-        return height
+        var cell: WEAForecastTableViewCell = self.prototypeCell
+        cell = self.configure(cell, indexPath: indexPath)
+        cell.setNeedsLayout()
+        cell.layoutIfNeeded()
+        return cell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height
     }
     
     // MARK: - WEADismissControllerProtocol

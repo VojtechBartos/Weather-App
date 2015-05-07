@@ -21,14 +21,15 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeb-jL-M0F" customClass="WEALabel" customModule="WeatherApp" customModuleProvider="target">
-                        <rect key="frame" x="93" y="29" width="42" height="21"/>
+                        <rect key="frame" x="93" y="29" width="42" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="6f6-NX-rTq"/>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="94" id="7S0-ic-w25"/>
+                            <constraint firstAttribute="height" constant="18" id="Mtz-vA-qKP"/>
                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="NfV-jJ-1b0"/>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="QHe-0G-qW4"/>
                             <constraint firstAttribute="width" constant="42" id="Rnu-sV-QVl"/>
                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="130" id="XHM-iQ-Xjv"/>
+                            <constraint firstAttribute="height" priority="750" constant="18" id="ZRf-FY-a9u"/>
                             <constraint firstAttribute="height" priority="750" constant="18" id="bSC-Ij-DrY"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -38,9 +39,11 @@
                             <mask key="constraints">
                                 <exclude reference="6f6-NX-rTq"/>
                                 <exclude reference="7S0-ic-w25"/>
+                                <exclude reference="Mtz-vA-qKP"/>
                                 <exclude reference="NfV-jJ-1b0"/>
                                 <exclude reference="Rnu-sV-QVl"/>
                                 <exclude reference="XHM-iQ-Xjv"/>
+                                <exclude reference="ZRf-FY-a9u"/>
                                 <exclude reference="bSC-Ij-DrY"/>
                             </mask>
                         </variation>
@@ -116,7 +119,7 @@
                     <constraint firstItem="qeb-jL-M0F" firstAttribute="leading" secondItem="XGX-jU-idz" secondAttribute="trailing" constant="18" id="rhb-3F-FC9"/>
                     <constraint firstItem="IXm-fd-7DV" firstAttribute="top" secondItem="qeb-jL-M0F" secondAttribute="bottom" constant="4" id="t8W-jb-9Oj"/>
                     <constraint firstItem="iUB-a1-b1E" firstAttribute="top" secondItem="WjN-X1-bi6" secondAttribute="topMargin" constant="25" id="vbP-cg-DXP"/>
-                    <constraint firstItem="IXm-fd-7DV" firstAttribute="top" secondItem="qeb-jL-M0F" secondAttribute="bottom" constant="2" id="zRs-uf-geZ"/>
+                    <constraint firstItem="IXm-fd-7DV" firstAttribute="top" secondItem="qeb-jL-M0F" secondAttribute="bottom" constant="5" id="zRs-uf-geZ"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">

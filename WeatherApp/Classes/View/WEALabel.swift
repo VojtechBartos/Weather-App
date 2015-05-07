@@ -14,8 +14,6 @@ class WEALabel: UILabel {
         super.layoutSubviews()
         
         self.preferredMaxLayoutWidth = CGRectGetWidth(self.bounds)
-        
-        super.layoutSubviews()
     }
 
 }
