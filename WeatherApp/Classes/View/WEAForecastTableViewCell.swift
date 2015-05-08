@@ -49,6 +49,6 @@ class WEAForecastTableViewCell: UITableViewCell {
         self.temperatureLabel.textColor = UIColor.wea_colorWithHexString("#2f91ff")
         
         // divider
-        self.dividerView.backgroundColor = UIColor.wea_colorWithHexString("#C3C3C3")
+        self.dividerView.backgroundColor = UIColor.wea_colorWithHexString("#dedede")
     }
 }

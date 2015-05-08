@@ -43,6 +43,8 @@ class WEATabBarController: UITabBarController, CLLocationManagerDelegate {
     // MARK: - Setup
     
     func setup() {
+        self.tabBar.clipsToBounds = true
+        
         // setup tab bar images
         for item: UITabBarItem in self.tabBar.items as! [UITabBarItem] {
             // setting up images
@@ -51,6 +53,13 @@ class WEATabBarController: UITabBarController, CLLocationManagerDelegate {
             item.selectedImage = WEATabBarController.imageFor(item.tag, selected: true)
                                     .imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         }
+        
+        // setup top border
+        let topBorder: CALayer = CALayer()
+        topBorder.frame = CGRectMake(0, 0, self.view.bounds.size.width, 1)
+        topBorder.backgroundColor = UIColor.wea_colorWithHexString("#dedede").CGColor
+        self.tabBar.layer.addSublayer(topBorder)
+        println(self.tabBar.layer.sublayers)
     }
     
     func setupObserver() {

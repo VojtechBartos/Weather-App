@@ -70,8 +70,8 @@ class WEATodayViewController: UIViewController {
         self.rainLabel.font = font
         self.rainLabel.textColor = color
         
-        self.dividerTopView.backgroundColor = UIColor.wea_colorWithHexString("#C3C3C3")
-        self.dividerBottomView.backgroundColor = UIColor.wea_colorWithHexString("#C3C3C3")
+        self.dividerTopView.backgroundColor = UIColor.wea_colorWithHexString("#dedede")
+        self.dividerBottomView.backgroundColor = UIColor.wea_colorWithHexString("#dedede")
     }
     
     func setupObservers() {
