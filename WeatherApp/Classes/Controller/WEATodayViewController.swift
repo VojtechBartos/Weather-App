@@ -92,7 +92,7 @@ class WEATodayViewController: UIViewController {
             var temperatureUnit = (self.config.temperatureUnit == WEAForecastTemperatureUnit.Fahrenheit) ? "°F" : "°C"
             var lengthUnit = (self.config.lengthUnit == WEAForecastLengthUnit.Yards) ? "y/s" : "m/s"
             
-            self.imageView.image = forecast.imageIcon
+            self.imageView.image = forecast.imageIcon(WEAImage.Big)
             self.infoLabel.text = String(
                 format: "%i %@ | %@",
                 forecast.temperatureIn(self.config.temperatureUnit).integerValue,

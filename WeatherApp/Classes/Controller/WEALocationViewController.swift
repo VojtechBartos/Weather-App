@@ -197,7 +197,7 @@ class WEALocationViewController: UIViewController, UITableViewDelegate, UITableV
         
         // set newest forecast data
         if let forecast: WEAForecast = city.orderedForecast().first {
-            cell.imageIconView.image = forecast.imageIcon
+            cell.imageIconView.image = forecast.imageIcon(WEAImage.Small)
             cell.descriptionLabel.text = forecast.info
             cell.temperatureLabel.text = NSString(format: "%iº", forecast.temperatureIn(self.config.temperatureUnit).integerValue) as String
         }

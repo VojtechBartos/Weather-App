@@ -86,7 +86,7 @@ class WEAForecastTableViewController: UITableViewController {
     func configure(cell: WEAForecastTableViewCell, indexPath: NSIndexPath) -> WEAForecastTableViewCell {
         var forecast: WEAForecast = self.days[indexPath.row]
         
-        cell.imageIconView.image = forecast.imageIcon
+        cell.imageIconView.image = forecast.imageIcon(WEAImage.Small)
         cell.titleLabel.text = forecast.day
         cell.descriptionLabel.text = forecast.info
         cell.temperatureLabel.text = NSString(format: "%iº", forecast.temperatureIn(self.config.temperatureUnit).integerValue) as String

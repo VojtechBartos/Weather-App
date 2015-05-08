@@ -10,24 +10,15 @@ enum WEAForecastLengthUnit: Int {
     case Yards = 1
 }
 
+enum WEAImage: Int {
+    case Small = 0
+    case Big = 1
+}
+
 @objc(WEAForecast)
 class WEAForecast: _WEAForecast {
 
     // MARK: - Getters
-    
-    var imageIcon: UIImage {
-        get {
-            // TODO(vojta) need found out more icons
-            var image: UIImage = UIImage(named: "Sun")!
-            if self.icon == "10d" {
-                image = UIImage(named: "CL")!
-            }
-            else if self.icon == "04d" {
-                image = UIImage(named: "CS")!
-            }
-            return image
-        }
-    }
     
     var compass: String {
         get {
@@ -49,6 +40,25 @@ class WEAForecast: _WEAForecast {
             
             return "-"
         }
+    }
+    
+    // MARK: - Image
+    
+    func imageIcon(type: WEAImage) -> UIImage {
+        // TODO(vojta) need found out more icons
+        var imageName: String = "Sun"
+        if self.icon == "10d" {
+            imageName = "CL"
+        }
+        else if self.icon == "04d" {
+            imageName = "CS"
+        }
+        
+        if type == WEAImage.Big {
+            imageName = String(format: "%@Big", imageName)
+        }
+        
+        return UIImage(named: imageName)!
     }
     
     // MARK: - Unit converters
