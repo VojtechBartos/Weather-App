@@ -47,11 +47,16 @@ class WEAForecast: _WEAForecast {
     func imageIcon(type: WEAImage) -> UIImage {
         // TODO(vojta) need found out more icons
         var imageName: String = "Sun"
-        if self.icon == "10d" {
-            imageName = "CL"
-        }
-        else if self.icon == "04d" {
-            imageName = "CS"
+        if self.icon != nil {
+            let matches = self.icon?.wea_matchesForRegex("(.*)\\d")
+            if matches?.count > 0 {
+                if matches?.first == "09" || matches?.first == "10" || matches?.first == "11" {
+                    imageName = "CL"
+                }
+                else if matches?.first == "02" || matches?.first == "03" || matches?.first == "04" {
+                    imageName = "CS"
+                }
+            }
         }
         
         if type == WEAImage.Big {
