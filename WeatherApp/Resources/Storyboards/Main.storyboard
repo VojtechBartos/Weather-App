@@ -120,7 +120,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Celsius" translatesAutoresizingMaskIntoConstraints="NO" id="cqm-rO-4DQ">
                                                 <rect key="frame" x="242" y="10" width="21" height="15"/>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Wind" translatesAutoresizingMaskIntoConstraints="NO" id="EDe-Tn-RE1">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WindToday" translatesAutoresizingMaskIntoConstraints="NO" id="EDe-Tn-RE1">
                                                 <rect key="frame" x="84" y="77" width="25" height="16"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Compass" translatesAutoresizingMaskIntoConstraints="NO" id="MB6-hj-ik2">
@@ -550,7 +550,7 @@
         <image name="Settings-Selected" width="23" height="23"/>
         <image name="SunBig" width="87" height="87"/>
         <image name="Today-Selected" width="24" height="24"/>
-        <image name="Wind" width="50" height="32"/>
+        <image name="WindToday" width="25" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4zj-eT-NWg"/>
