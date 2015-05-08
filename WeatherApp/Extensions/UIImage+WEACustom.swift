@@ -13,7 +13,6 @@ extension UIImage {
     class func wea_imageForTableViewRowAction(attributedText: NSAttributedString, size: CGSize, backgroundColor: UIColor) -> UIImage? {
         var rect: CGRect = CGRectMake(0, 0, size.width, size.height)
         
-        
         UIGraphicsBeginImageContextWithOptions(rect.size, true, UIScreen.mainScreen().nativeScale);
         
         var context: CGContextRef = UIGraphicsGetCurrentContext()

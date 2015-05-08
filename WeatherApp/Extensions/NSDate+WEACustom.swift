@@ -1,5 +1,5 @@
 //
-//  NSDate+WEAcustom.swift
+//  NSDate+WEACustom.swift
 //  WeatherApp
 //
 //  Created by Vojta Bartos on 19/04/15.

@@ -29,7 +29,7 @@
 		BC05B59A1AE3C4E80021C864 /* WEAGoogleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC05B5991AE3C4E80021C864 /* WEAGoogleAPI.swift */; };
 		BC05B59C1AE3C5790021C864 /* WEAWeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC05B59B1AE3C5780021C864 /* WEAWeatherAPI.swift */; };
 		BC05B59E1AE3C9B60021C864 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC05B59D1AE3C9B60021C864 /* CoreLocation.framework */; };
-		BC05B5A01AE3DE6E0021C864 /* NSDate+WEAcustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC05B59F1AE3DE6E0021C864 /* NSDate+WEAcustom.swift */; };
+		BC05B5A01AE3DE6E0021C864 /* NSDate+WEACustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC05B59F1AE3DE6E0021C864 /* NSDate+WEACustom.swift */; };
 		BC05B5A41AE4CF280021C864 /* WEATableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC05B5A31AE4CF280021C864 /* WEATableViewCell.xib */; };
 		BC2135641AF7511F006F7501 /* Credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC2135631AF7511F006F7501 /* Credentials.plist */; };
 		BC2135661AF754DA006F7501 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC2135651AF754DA006F7501 /* LaunchScreen.xib */; };
@@ -81,7 +81,7 @@
 		BC05B5991AE3C4E80021C864 /* WEAGoogleAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WEAGoogleAPI.swift; sourceTree = "<group>"; };
 		BC05B59B1AE3C5780021C864 /* WEAWeatherAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WEAWeatherAPI.swift; sourceTree = "<group>"; };
 		BC05B59D1AE3C9B60021C864 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		BC05B59F1AE3DE6E0021C864 /* NSDate+WEAcustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+WEAcustom.swift"; sourceTree = "<group>"; };
+		BC05B59F1AE3DE6E0021C864 /* NSDate+WEACustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+WEACustom.swift"; sourceTree = "<group>"; };
 		BC05B5A31AE4CF280021C864 /* WEATableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WEATableViewCell.xib; sourceTree = "<group>"; };
 		BC2135631AF7511F006F7501 /* Credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Credentials.plist; sourceTree = "<group>"; };
 		BC2135651AF754DA006F7501 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -202,7 +202,7 @@
 				BC8E274A1AE23133004BE582 /* UIFont+WEACustom.swift */,
 				BC8E274C1AE232EC004BE582 /* UIColor+WEACustom.swift */,
 				BC8E27541AE23D91004BE582 /* UIImage+WEACustom.swift */,
-				BC05B59F1AE3DE6E0021C864 /* NSDate+WEAcustom.swift */,
+				BC05B59F1AE3DE6E0021C864 /* NSDate+WEACustom.swift */,
 				BC6EBD1D1AF8A004004958DE /* UIViewController+WEACustom.swift */,
 			);
 			path = Extensions;
@@ -506,7 +506,7 @@
 				BC8E275D1AE261FE004BE582 /* WEASearchTableViewController.swift in Sources */,
 				BC8E274D1AE232EC004BE582 /* UIColor+WEACustom.swift in Sources */,
 				BCDBDA1C1ADC0B5E006DF8C3 /* WEAForecastTableViewController.swift in Sources */,
-				BC05B5A01AE3DE6E0021C864 /* NSDate+WEAcustom.swift in Sources */,
+				BC05B5A01AE3DE6E0021C864 /* NSDate+WEACustom.swift in Sources */,
 				BC6EBD1C1AF89471004958DE /* WEADismissControllerProtocol.swift in Sources */,
 				BCDBD9F61ADC0870006DF8C3 /* AppDelegate.swift in Sources */,
 				BCEFBC091AE629BF00A6A9DA /* WEASearchTableViewCell.swift in Sources */,
