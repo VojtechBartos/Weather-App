@@ -43,10 +43,21 @@ class WEATabBarController: UITabBarController, CLLocationManagerDelegate {
     func setup() {
         // setup tab bar images
         for item: UITabBarItem in self.tabBar.items as! [UITabBarItem] {
+            // setting up images
             item.image = WEATabBarController.imageFor(item.tag, selected: false)
                             .imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
             item.selectedImage = WEATabBarController.imageFor(item.tag, selected: true)
                                     .imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+            
+            // setting up font and color
+            item.setTitleTextAttributes([
+                NSFontAttributeName: UIFont.wea_proximaNovaSemiboldWithSize(10),
+                NSForegroundColorAttributeName: UIColor.wea_colorWithHexString("#333333")
+            ], forState: UIControlState.Normal)
+            item.setTitleTextAttributes([
+                NSFontAttributeName: UIFont.wea_proximaNovaSemiboldWithSize(10),
+                NSForegroundColorAttributeName: UIColor.wea_colorWithHexString("#2f91ff")
+            ], forState: UIControlState.Highlighted)
         }
     }
     
