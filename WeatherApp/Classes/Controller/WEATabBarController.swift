@@ -30,11 +30,13 @@ class WEATabBarController: UITabBarController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
+        self.setupObserver()
         
         self.locationManager.startUpdatingLocation()
     }
     
     override func viewWillDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
         self.locationManager.stopUpdatingLocation()
     }
     
@@ -61,6 +63,31 @@ class WEATabBarController: UITabBarController, CLLocationManagerDelegate {
         }
     }
     
+    func setupObserver() {
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: Selector("applicationDidBecomeActive"),
+            name: UIApplicationDidBecomeActiveNotification,
+            object: nil
+        )
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: Selector("applicationDidEnterBackground"),
+            name: UIApplicationDidEnterBackgroundNotification,
+            object: nil
+        )
+    }
+    
+    // MARK: - Observer
+    
+    func applicationDidBecomeActive() {
+        self.updatedAt = nil
+        self.locationManager.startUpdatingLocation()
+    }
+    
+    func applicationDidEnterBackground() {
+        self.locationManager.stopUpdatingLocation()
+    }
     
     // MARK: - CLLocationManagerDelegate
     
@@ -129,6 +156,12 @@ class WEATabBarController: UITabBarController, CLLocationManagerDelegate {
         }
         
         return UIImage(named: name!)
+    }
+    
+    // MARK: - System
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
 }
