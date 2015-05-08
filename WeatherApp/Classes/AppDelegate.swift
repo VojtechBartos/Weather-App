@@ -56,8 +56,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ]
         
         UITabBarItem.appearance().setTitleTextAttributes([
-            NSFontAttributeName: UIFont.wea_proximaNovaSemiboldWithSize(10)
+            NSFontAttributeName: UIFont.wea_proximaNovaSemiboldWithSize(10),
+            NSForegroundColorAttributeName: UIColor.wea_colorWithHexString("#333333")
         ], forState: UIControlState.Normal)
+        UITabBarItem.appearance().setTitleTextAttributes([
+            NSFontAttributeName: UIFont.wea_proximaNovaSemiboldWithSize(10),
+            NSForegroundColorAttributeName: UIColor.wea_colorWithHexString("#2f91ff")
+        ], forState: UIControlState.Selected)
     }
 
 }
