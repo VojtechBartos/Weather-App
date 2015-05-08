@@ -59,7 +59,6 @@ class WEATabBarController: UITabBarController, CLLocationManagerDelegate {
         topBorder.frame = CGRectMake(0, 0, self.view.bounds.size.width, 1)
         topBorder.backgroundColor = UIColor.wea_colorWithHexString("#dedede").CGColor
         self.tabBar.layer.addSublayer(topBorder)
-        println(self.tabBar.layer.sublayers)
     }
     
     func setupObserver() {
