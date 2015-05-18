@@ -10,7 +10,6 @@ import UIKit
 
 class WEATodayViewController: UIViewController {
     
-    @IBOutlet weak var wrapperView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
@@ -46,7 +45,7 @@ class WEATodayViewController: UIViewController {
         let font = UIFont.wea_proximaNovaSemiboldWithSize(18.0)
         let color = UIColor.wea_colorWithHexString("#333333")
         
-        self.wrapperView.backgroundColor = UIColor.clearColor()
+        self.view.backgroundColor = UIColor.whiteColor()
         
         self.cityLabel.font = font
         self.cityLabel.textColor = color
